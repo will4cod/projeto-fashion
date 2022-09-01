@@ -11,6 +11,7 @@
     </head>
     <body>
         <div class="principal">
+            <ion-icon name="menu-outline" class="icon-menu" onclick="menu()"></ion-icon>
             <header class="header-topo">
                 <img class="logotipo" src="imagens/logo.png" alt="Logotipo"> 
                 <nav>
@@ -22,7 +23,7 @@
                 </nav>
             </header>    
         
-        <img src="imagens/topo.jpg" alt="Modelo feminina">
+        <img src="imagens/topo.jpg" alt="Modelo feminina" class="img-principal">
         
         <article class="portifolio">
             <h1>New Fashion Everything Never Enough</h1>
@@ -79,5 +80,14 @@
         </footer>
 
         </div>
+
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+
+        <script>
+            
+            function menu(){
+                document.querySelector('.header-topo').classList.toggle('active')
+            }
+        </script>
     </body>
 </html>

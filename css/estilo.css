@@ -2,11 +2,17 @@ body{
     font-family: tahoma, arial, sans-serif;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 .principal{
-    width: 1024px;
+    width: 70vw;
     margin: 20px auto;
+    position: relative;
+}
+
+.icon-menu{
+    display: none;
 }
 
 .header-topo{
@@ -49,6 +55,10 @@ body{
     display: inline-block;
     margin-right: 15px;
     padding: 13px;
+}
+
+.img-principal{
+    width: 100%;
 }
 
 .portifolio{
@@ -136,4 +146,61 @@ font-weight: bold;
     color: #6f8597;
     letter-spacing: 5px;
     text-align: center;
+}
+
+
+@media screen and (max-width: 1100px) {
+    .logotipo{
+        margin: 5px 20px;
+    }
+}
+
+@media screen and (max-width: 780px ) {
+
+    .principal{
+        margin-top: 20px;
+        width: 100vw;
+    }
+
+    .header-topo {
+        background-color: #162028;
+        position: absolute;
+        top: 0;
+        left: -60%;
+        height: 100vh;
+        width: 40%;
+        opacity: 0.8;
+        transition: .2s;
+    }
+
+    .active{
+        left: 0;
+    }
+
+    .icon-menu{
+        color: white;
+        width: 30px;
+        height: 30px;
+        margin-left: 10px;
+        margin-top: 10px;
+        position: absolute;
+        cursor: pointer;
+        z-index: 1;
+        display: block;
+    }
+
+    .logotipo{
+        display: none;
+    }
+    
+    .header-topo nav {
+        position: relative;
+    }
+
+    .header-topo nav ul {
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        margin-top: 80px;
+    }
 }
