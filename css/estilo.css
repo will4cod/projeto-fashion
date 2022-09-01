@@ -79,14 +79,45 @@ body{
 
 .gallery{
     color: #555;
-    padding: 0 100px 50px 100px;
-    overflow: auto;
+    width: 100%;
+    position: relative;
 }
 
+.cards{
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+.slide{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 45px;
+    border: 2px solid white;
+    background: rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    display: none;
+}
+
+.slide span{
+    font-size: 45px;
+    color: black;
+    line-height: 41px;
+}
+
+.right{
+    right: 0;
+} 
+
 .gallery-card{
-    width: 32%;
-    float: left;
+    height: 100%;
+    width: 100%;
     text-align: center;
+    margin: 5px;
+}
+
+.gallery-card img{
+    height: 220px;
 }
 
 .gallery-tittle{
@@ -103,6 +134,7 @@ font-weight: bold;
     background-image: url(../imagens/bg_detalhe.png);
     background-repeat: no-repeat;
     background-position: right bottom;
+    margin-top: 40px;
 }
 
 .about h2{
@@ -153,6 +185,42 @@ font-weight: bold;
     .logotipo{
         margin: 5px 20px;
     }
+
+    .gallery{
+        color: #555;
+        height: 300px;
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+    }
+    
+    .cards{
+        height: 100%;
+        width: 100%; 
+        display: block;
+    }
+    
+    .slide{
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 45px;
+        border: 2px solid white;
+        background: rgba(255, 255, 255, 0.2);
+        cursor: pointer;
+        display: block;
+    }
+    
+    .slide span{
+        font-size: 45px;
+        color: black;
+        line-height: 41px;
+    }
+    
+    .right{
+        right: 0;
+    }    
+
 }
 
 @media screen and (max-width: 780px ) {

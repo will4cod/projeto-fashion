@@ -8,6 +8,9 @@
         <meta name="description" content="descrição bacanuda">
         <meta name="keywords" content="html5, tecnologia">
         <link rel="Stylesheet" href="css/estilo.css">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     </head>
     <body>
         <div class="principal">
@@ -33,23 +36,53 @@
         </article>
 
         <section class="gallery">
-            <article class="gallery-card">
-                <img src="imagens/modelo1.jpg" alt="modelo 1">
-                <p class="gallery-tittle"> Vest Romasa </p>
-                <p class="gallery-text"> Strong & charismatic</p>
-            </article>
+            <div class="cards">
+                <article class="gallery-card">
+                    <img src="imagens/modelo1.jpg" alt="modelo 1">
+                    <p class="gallery-tittle"> Vest Romasa </p>
+                    <p class="gallery-text"> Strong & charismatic</p>
+                </article>
+    
+                <article class="gallery-card">
+                    <img src="imagens/modelo2.jpg" alt="modelo 2">
+                    <p class="gallery-tittle"> Jacket Fima </p>
+                    <p class="gallery-text"> Strong Sersonality</p>
+                 </article>
+    
+                <article class="gallery-card">
+                    <img src="imagens/modelo3.jpg" alt="modelo 3">
+                    <p class="gallery-tittle"> Jacket Black Kira </p>
+                    <p class="gallery-text"> Power Fascinating</p>
+                </article>
+    
+                <article class="gallery-card">
+                    <img src="imagens/modelo1.jpg" alt="modelo 1">
+                    <p class="gallery-tittle"> Vest Romasa </p>
+                    <p class="gallery-text"> Strong & charismatic</p>
+                </article>
+    
+                <article class="gallery-card">
+                    <img src="imagens/modelo2.jpg" alt="modelo 2">
+                    <p class="gallery-tittle"> Jacket Fima </p>
+                    <p class="gallery-text"> Strong Sersonality</p>
+                 </article>
+    
+                <article class="gallery-card">
+                    <img src="imagens/modelo3.jpg" alt="modelo 3">
+                    <p class="gallery-tittle"> Jacket Black Kira </p>
+                    <p class="gallery-text"> Power Fascinating</p>
+                </article>
 
-            <article class="gallery-card">
-                <img src="imagens/modelo2.jpg" alt="modelo 2">
-                <p class="gallery-tittle"> Jacket Fima </p>
-                <p class="gallery-text"> Strong Sersonality</p>
-             </article>
+                <div onclick="sideSlide(-1)" class="slide left">
+                    <span class="fa fa-angle-left"></span>
+                </div>
+        
+                <div onclick="sideSlide(1)" class="slide right">
+                    <span class="fa fa-angle-right"></span>
+                </div>
+        
+            </div>
 
-            <article class="gallery-card">
-                <img src="imagens/modelo3.jpg" alt="modelo 3">
-                <p class="gallery-tittle"> Jacket Black Kira </p>
-                <p class="gallery-text"> Power Fascinating</p>
-            </article>
         </section>
 
         <article class="about">
@@ -84,9 +117,46 @@
         <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 
         <script>
+
+            
+            var indexValue = 1;
+            const cards = document.querySelectorAll('.gallery-card');
+
             
             function menu(){
                 document.querySelector('.header-topo').classList.toggle('active')
+            }
+
+            window.addEventListener('resize', function(event) {
+                    console.log(event.currentTarget.innerWidth)
+                    if(event.currentTarget.innerWidth < 1100){
+                        for(i = 0; i< cards.length; i++){
+                        cards[i].style.display = 'none'
+                    }
+
+                    cards[indexValue-1].style.display = 'block';
+
+                    }else{
+                        for(i = 0; i< cards.length; i++){
+                        cards[i].style.display = 'block'
+                    }
+                    }
+                }, true);
+
+            showImg(indexValue)
+
+            function sideSlide(e) {showImg(indexValue += e)}
+
+            function showImg(e){
+                var i;
+                if(e > cards.length){indexValue = 1}
+                if(e < 1 ){indexValue = cards.length}
+
+                for(i = 0; i< cards.length; i++){
+                        cards[i].style.display = 'none'
+                }
+
+                cards[indexValue-1].style.display = 'block';
             }
         </script>
     </body>
