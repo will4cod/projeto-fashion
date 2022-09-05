@@ -122,28 +122,28 @@
             var indexValue = 1;
             const cards = document.querySelectorAll('.gallery-card');
 
-            
+
             function menu(){
                 document.querySelector('.header-topo').classList.toggle('active')
             }
 
             window.addEventListener('resize', function(event) {
-                    console.log(event.currentTarget.innerWidth)
+                    //console.log(event.currentTarget.innerWidth)
                     if(event.currentTarget.innerWidth < 1100){
                         for(i = 0; i< cards.length; i++){
                         cards[i].style.display = 'none'
+                        
                     }
-
+                    
                     cards[indexValue-1].style.display = 'block';
-
+                    
                     }else{
-                        for(i = 0; i< cards.length; i++){
-                        cards[i].style.display = 'block'
+                        showGrid()
                     }
-                    }
-                }, true);
+            }, true);
 
-            showImg(indexValue)
+            showGrid();
+            
 
             function sideSlide(e) {showImg(indexValue += e)}
 
@@ -157,6 +157,12 @@
                 }
 
                 cards[indexValue-1].style.display = 'block';
+            }
+
+            function showGrid(){
+                for(i = 0; i< cards.length; i++){
+                    cards[i].style.display = 'block'
+                }
             }
         </script>
     </body>

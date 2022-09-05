@@ -117,7 +117,7 @@ body{
 }
 
 .gallery-card img{
-    height: 220px;
+    height: 210px;
 }
 
 .gallery-tittle{
@@ -224,6 +224,10 @@ font-weight: bold;
 }
 
 @media screen and (max-width: 780px ) {
+
+    body{
+        overflow-x: hidden;
+    }
 
     .principal{
         margin-top: 20px;
