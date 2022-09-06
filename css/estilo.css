@@ -228,10 +228,11 @@ font-weight: bold;
     body{
         overflow-x: hidden;
     }
-
+    
     .principal{
         margin-top: 20px;
         width: 100vw;
+        min-width: 375px;
     }
 
     .header-topo {
@@ -274,5 +275,12 @@ font-weight: bold;
         display: flex;
         flex-direction: column;
         margin-top: 80px;
+    }
+}
+
+@media screen and (max-width: 470px) {
+    
+    .header-topo{
+        width: 60%;
     }
 }
